@@ -19,7 +19,7 @@ let padding = 10000;
 //let tippingAddress = 'tb1pkjs7aww5m2muw5jpfxfrs4849dyjtp7camnqymlxt5mwmzy440xqe864rg';
 
 // main
-let tippingAddress = 'bc1p5e5j2zkhzdac3mz4p4zxmrf5ujcl5ycxwf6vxcn5d85gt6g8g0jq86x3fp';
+let tippingAddress = 'bc1pwzz58qssm7xyp0jm2ys66q4us4mcyta72ujm5ppefczllq9duwesxpatlz';
 
 // enabled plugins (appear in 'special' if any)
 let plugins = [

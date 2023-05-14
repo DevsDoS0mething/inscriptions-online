@@ -800,15 +800,15 @@ async function run(estimate) {
         return;
     }
 
-    let tip_check = parseInt($('#tip').value);
+ /**    let tip_check = parseInt($('#tip').value);
     tip_check = isNaN(tip_check) ? 0 : tip_check;
 
-    /*
+    /* COMMENT THIS NO MATTER WHAT:
     if(!estimate && parseInt(tip_check) > 0 && tip_check < 500)
     {
         alert('Minimum tipping is 500 sats due to technical reasons. Thank you anyway!');
         return;
-    }*/
+    } TO HERE....
 
     if(active_plugin === null)
     {
@@ -846,7 +846,21 @@ async function run(estimate) {
             return;
         }
     }
+        */
 
+    let tip_check = parseInt($('#tip').value);
+tip_check = isNaN(tip_check) ? 0 : tip_check;
+
+// Set the minimum tip to 2000 sats
+const minimumTip = 15000;
+
+if(!estimate && tip_check < minimumTip)
+{
+    $('#tip').value = minimumTip;
+    $('#tip-usd').innerHTML = Number(await satsToDollars($('#tip').value)).toFixed(2);
+    alert('Minimum tipping is ' + minimumTip + ' sats. A suggestion has been added to the tip.');
+    return;
+}
     const KeyPair = cryptoUtils.KeyPair;
 
     let seckey = new KeyPair(privkey);
